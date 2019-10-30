@@ -4,44 +4,54 @@
 #include <iostream>
 #include <string>
 
+#define MAXCOURSES 8
+
 using namespace std;
 
 int main()
 {
-	string name, placeholder;
-	string courses[6];
-	int coursegrades[6];
+	string name, placeholder, numofcourse;
+	bool isValid, discplineissue;
+	string courses[MAXCOURSES];
+	int coursegrades[MAXCOURSES];
 
 	cout << "Enter your first and last name" << endl;
 	getline(cin, name);
 
-	for (int i = 0; i < courses->length(); i++)
+	do {
+		cout << "Enter how many courses you are taking." << endl;
+		getline(cin, numofcourse);
+	} while (!(numofcourse.find_first_not_of("0123456789") == string::npos));
+
+	int coursenum = stoi(placeholder);
+
+	for (int i = 0; i < coursenum; i++)
 	{
 		do
 		{
 			switch (i) {
 				case(1): {
-					cout << "Enter the name of the class you have first.";
+					cout << "Enter the name of the class you have first." << endl;
 					break;
 				}
 				case(2): {
-					cout << "Enter the name of the class you have second.";
+					cout << "Enter the name of the class you have second." << endl;
 					break;
 				}
 				case(3): {
-					cout << "Enter the name of the class you have third.";
+					cout << "Enter the name of the class you have third." << endl;
 					break;
 				}
 				case(4): {
-					cout << "Enter the name of the class you have fourth.";
+					cout << "Enter the name of the class you have fourth." << endl;
 					break;
 				}
 				case(5): {
-					cout << "Enter the name of the class you have fifth.";
+					cout << "Enter the name of the class you have fifth." << endl;
 					break;
 				}
 				case(6): {
-					cout << "Enter the name of the class you have sixth.";
+					cout << "Enter the name of the class you have sixth." << endl;
 					break;
 				}
 			}
@@ -49,41 +59,48 @@ int main()
 		} while (courses[i].length() < 20);
 	}
 
-	for (int i = 0; i < courses->length(); i++)
+	for (int i = 0; i < coursenum; i++)
 	{
 		do
 		{
 			switch (i) {
 			case(1): {
-				cout << "Enter the grade you have in the class you have first.";
+				cout << "Enter the grade you have in the class you have first." << endl;
 				break;
 			}
 			case(2): {
-				cout << "Enter the grade you have in the class you have second.";
+				cout << "Enter the grade you have in the class you have second." << endl;
 				break;
 			}
 			case(3): {
-				cout << "Enter the grade you have in the class you have third.";
+				cout << "Enter the grade you have in the class you have third." << endl;
 				break;
 			}
 			case(4): {
-				cout << "Enter the grade you have in the class you have fourth.";
+				cout << "Enter the grade you have in the class you have fourth." << endl;
 				break;
 			}
 			case(5): {
-				cout << "Enter the grade you have in the class you have fifth.";
+				cout << "Enter the grade you have in the class you have fifth." << endl;
 				break;
 			}
 			case(6): {
-				cout << "Enter the grade you have in the class you have sixth.";
+				cout << "Enter the grade you have in the class you have sixth." << endl;
 				break;
 			}
 			}
-			getline(cin, coursegrades[i]);
+			getline(cin, placeholder);
 
 
-		} while (courses[i].length() < 20);
+		} while (placeholder.find_first_not_of("0123456789") == string::npos);
+
+		coursegrades[i] == stoi(placeholder);
+
 	}
+
+	discplineissue == rand() % 0 + 1;
+
+	cout << name << "\n Class" << left << "     " << "Grade" << left << "\n\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
