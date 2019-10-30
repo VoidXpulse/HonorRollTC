@@ -2,10 +2,88 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	string name, placeholder;
+	string courses[6];
+	int coursegrades[6];
+
+	cout << "Enter your first and last name" << endl;
+	getline(cin, name);
+
+	for (int i = 0; i < courses->length(); i++)
+	{
+		do
+		{
+			switch (i) {
+				case(1): {
+					cout << "Enter the name of the class you have first.";
+					break;
+				}
+				case(2): {
+					cout << "Enter the name of the class you have second.";
+					break;
+				}
+				case(3): {
+					cout << "Enter the name of the class you have third.";
+					break;
+				}
+				case(4): {
+					cout << "Enter the name of the class you have fourth.";
+					break;
+				}
+				case(5): {
+					cout << "Enter the name of the class you have fifth.";
+					break;
+				}
+				case(6): {
+					cout << "Enter the name of the class you have sixth.";
+					break;
+				}
+			}
+			getline(cin, courses[i]);
+		} while (courses[i].length() < 20);
+	}
+
+	for (int i = 0; i < courses->length(); i++)
+	{
+		do
+		{
+			switch (i) {
+			case(1): {
+				cout << "Enter the grade you have in the class you have first.";
+				break;
+			}
+			case(2): {
+				cout << "Enter the grade you have in the class you have second.";
+				break;
+			}
+			case(3): {
+				cout << "Enter the grade you have in the class you have third.";
+				break;
+			}
+			case(4): {
+				cout << "Enter the grade you have in the class you have fourth.";
+				break;
+			}
+			case(5): {
+				cout << "Enter the grade you have in the class you have fifth.";
+				break;
+			}
+			case(6): {
+				cout << "Enter the grade you have in the class you have sixth.";
+				break;
+			}
+			}
+			getline(cin, coursegrades[i]);
+
+
+		} while (courses[i].length() < 20);
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
