@@ -20,11 +20,11 @@ int main()
 	getline(cin, name);
 
 	do {
-		cout << "Enter how many courses you are taking." << endl;
+		cout << "Enter how many courses you are taking. (No more than 8, no less than 1)" << endl;
 		getline(cin, numofcourse);
 	} while (!(numofcourse.find_first_not_of("0123456789") == string::npos));
 
-	int coursenum = stoi(placeholder);
+	int coursenum = stoi(numofcourse);
 
 	for (int i = 0; i < coursenum; i++)
 	{
