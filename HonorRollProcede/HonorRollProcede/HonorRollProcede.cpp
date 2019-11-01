@@ -8,10 +8,11 @@
 
 using namespace std;
 
+
 int main()
 {
 	string name, placeholder, numofcourse;
-	bool isValid, discplineissue;
+	bool discplineissue;
 	string courses[MAXCOURSES];
 	int coursegrades[MAXCOURSES];
 
@@ -54,6 +55,14 @@ int main()
 					cout << "Enter the name of the class you have sixth." << endl;
 					break;
 				}
+				case(7): {
+					cout << "Enter the name of the class you have seventh." << endl;
+					break;
+				}
+				case(8): {
+					cout << "Enter the name of the class you have eighth." << endl;
+					break;
+				}
 			}
 			getline(cin, courses[i]);
 		} while (courses[i].length() < 20);
@@ -88,17 +97,25 @@ int main()
 				cout << "Enter the grade you have in the class you have sixth." << endl;
 				break;
 			}
+			case(7): {
+				cout << "Enter the grade you have in the class you have seventh." << endl;
+				break;
+			}
+			case(8): {
+				cout << "Enter the grade you have in the class you have eighth." << endl;
+				break;
+			}
 			}
 			getline(cin, placeholder);
 
 
 		} while (placeholder.find_first_not_of("0123456789") == string::npos);
 
-		coursegrades[i] == stoi(placeholder);
+		coursegrades[i] = stoi(placeholder);
 
 	}
 
-	discplineissue == rand() % 0 + 1;
+	discplineissue = rand() % 0 + 1;
 
 	cout << name << "\n Class" << left << "     " << "Grade" << left << "\n\n";
 }
