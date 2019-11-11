@@ -1,4 +1,4 @@
-// HonorRollProcede.cpp : This file contains the 'main' function. Program execution begins and ends there.
+   // HonorRollProcede.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -11,14 +11,18 @@ using namespace std;
 
 int main()
 {
-	string name, placeholder, numofcourse, issue;
+	string firstname, lastname, placeholder, numofcourse, issue;
 	bool discplineissue;
 	string courses[MAXCOURSES];
 	int coursegrades[MAXCOURSES];
 	int coursenum, average = 0;
 
-	cout << "Enter your first and last name" << endl;
-	getline(cin, name);
+	cout << "Enter your first name" << endl;
+	getline(cin, firstname);
+
+	cout << "Enter your last name" << endl;
+	getline(cin, lastname);
+
 	do {
 		do {
 			cout << "Enter how many courses you are taking. (No more than 8, no less than 1)" << endl;
@@ -148,10 +152,10 @@ int main()
 	cout << "Disciplinary Infraction: " << issue << "\n";
 
 	if (average > 90 && coursenum >= 5 && discplineissue) {
-		cout << "Congratulations " << name << "! You have made the honor roll.";
+		cout << "Congratulations " << firstname << "! You have made the honor roll. \n";
 	}
 	else {
-		cout << "I’m sorry " << name << " but you didn’t qualify for the honor roll.";
+		cout << "I am sorry " << firstname << " but you didn’t qualify for the honor roll. \n";
 	}
 
 }
