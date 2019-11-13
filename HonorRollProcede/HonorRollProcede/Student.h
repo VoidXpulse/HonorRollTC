@@ -4,10 +4,13 @@ class Student {
 	public {
 		Student();
 
-		void getValidFirst();
-		void getValidLast();
-		void getValidCourseNum();
-		void getValidCourses();
-		void getValidCourseGrades();
+		void setValidFirst();
+		void setValidLast();
+		void setValidCourseNum();
+		void setValidCourses();
+		void setValidCourseGrades();
+		void randomizeInfraction();
+		void calcAverage();
+		void getOutput();
 	}
 };
