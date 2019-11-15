@@ -11,14 +11,18 @@ using namespace std;
 
 int main()
 {
-	string name, placeholder, numofcourse, issue;
+	string firstname, lastname, placeholder, numofcourse, issue;
 	bool discplineissue;
 	string courses[MAXCOURSES];
 	int coursegrades[MAXCOURSES];
 	int coursenum, average = 0;
 
-	cout << "Enter your first and last name" << endl;
-	getline(cin, name);
+	cout << "Enter your first name" << endl;
+	getline(cin, firstname);
+
+	cout << "Enter your last name" << endl;
+	getline(cin, lastname);
+
 	do {
 		do {
 			cout << "Enter how many courses you are taking. (No more than 8, no less than 1)" << endl;
@@ -141,17 +145,17 @@ int main()
 	cout << name << "\nClass" << left << "     " << "Grade" << left << "\n\n";
 	
 	for (int i = 0; i < coursenum; i++) {
-		cout << courses[i] << left << "     " << coursegrades[i] << left << "\n";
+		cout << courses[i] << left << "     " << coursegrades[i] << l.[eft << "\n";
 	}
 
 	cout << "\nAverage: " << average << "\n";
 	cout << "Disciplinary Infraction: " << issue << "\n";
 
 	if (average > 90 && coursenum >= 5 && discplineissue) {
-		cout << "Congratulations " << name << "! You have made the honor roll.";
+		cout << "Congratulations " << firstname << "! You have made the honor roll. \n";
 	}
 	else {
-		cout << "I’m sorry " << name << " but you didn’t qualify for the honor roll.";
+		cout << "I am sorry " << firstname << " but you didnâ€™t qualify for the honor roll. \n";
 	}
 
 }
