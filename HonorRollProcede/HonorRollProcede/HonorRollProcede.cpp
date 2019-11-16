@@ -1,4 +1,4 @@
-   // HonorRollProcede.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// HonorRollProcede.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -8,30 +8,33 @@
 
 using namespace std;
 
-
 int main()
 {
-	string firstname, lastname, placeholder, numofcourse, issue;
+	string firstname = "", lastname = "", placeholder, numofcourse, issue;
 	bool discplineissue;
 	string courses[MAXCOURSES];
 	int coursegrades[MAXCOURSES];
 	int coursenum, average = 0;
 
-	cout << "Enter your first name" << endl;
-	getline(cin, firstname);
-
-	cout << "Enter your last name" << endl;
-	getline(cin, lastname);
-
+	do {
+		cout << "Enter your first name" << endl;
+		getline(cin, firstname);
+	} while (firstname.length() < 1);
+	
+	do {
+		cout << "Enter your last name" << endl;
+		getline(cin, lastname);
+	} while (lastname.length() < 1);
+	
 	do {
 		do {
 			cout << "Enter how many courses you are taking. (No more than 8, no less than 1)" << endl;
 			getline(cin, numofcourse);
-		} while (!(numofcourse.find_first_not_of("0123456789") == string::npos));
+		} while (!(numofcourse.find_first_not_of("0123456789") == string::npos) || numofcourse.length() < 1);
 
 		coursenum = stoi(numofcourse);
 
-	} while (coursenum < 0 || coursenum > 9);
+	} while (coursenum < 0 || coursenum > 8);
 
 	for (int i = 0; i < coursenum; i++)
 	{
@@ -142,7 +145,7 @@ int main()
 
 	average = average / coursenum;
 
-	cout << name << "\nClass" << left << "     " << "Grade" << left << "\n\n";
+	cout << firstname << " " << lastname <<"\nClass" << left << "     " << "Grade" << left << "\n\n";
 	
 	for (int i = 0; i < coursenum; i++) {
 		cout << courses[i] << left << "     " << coursegrades[i] << left << "\n";
@@ -155,7 +158,7 @@ int main()
 		cout << "Congratulations " << firstname << "! You have made the honor roll. \n";
 	}
 	else {
-		cout << "I am sorry " << firstname << " but you didn’t qualify for the honor roll. \n";
+		cout << "I am sorry " << firstname << " but you did not qualify for the honor roll. \n";
 	}
 
 }
