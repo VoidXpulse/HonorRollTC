@@ -1,14 +1,19 @@
 #include "Student.h"
 #include "GetData.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
 
-#define MAXCOURSES 8
+using namespace std;
 
-Student() {
+Student :: Student() {
 
-	int discplineissue, coursenum = 0, average = 0;
-	string issue = false, first = "", last = "";
-	int coursegrades[MAXCOURSES];
-	string courses[MAXCOURSES];
+	coursenum = 0;
+	average = 0;
+
+	issue = "NO";
+	first = "";
+	last = "";
 
 	discplineissue = rand() % 2;
 
@@ -41,7 +46,7 @@ void setValidCourseNum() {
 	
 		cout << "Enter the number of courses you have." << endl;
 
-	} while (getValidInt(coursenum);
+	} while (getValidInt(coursenum));
 
 }
 

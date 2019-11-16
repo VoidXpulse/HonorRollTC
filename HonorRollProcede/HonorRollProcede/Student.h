@@ -1,16 +1,33 @@
 #pragma once
 
-class Student {
-	public {
-		Student();
+#include <string>
 
-		void setValidFirst();
-		void setValidLast();
-		void setValidCourseNum();
-		void setValidCourses();
-		void setValidCourseGrades();
-		void randomizeInfraction();
-		void calcAverage();
-		void getOutput();
-	}
+#define MAXCOURSES 8
+
+using namespace std;
+
+class Student
+{
+public:
+	Student();
+
+	void setValidFirst();
+	void setValidLast();
+	void setValidCourseNum();
+	void setValidCourses();
+	void setValidCourseGrades();
+	void randomizeInfraction();
+	void calcAverage();
+	void getOutput();
+
+	int discplineissue;
+	int coursenum;
+	int average;
+
+	string issue;
+	string first;
+	string last;
+
+	int coursegrades[MAXCOURSES];
+	string courses[MAXCOURSES];
 };
