@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Student :: Student() {
+Student :: Student() {//Student Constructor. Initializes most variables.
 
 	coursenum = 0;
 	average = 0;
@@ -31,7 +31,7 @@ Student :: Student() {
 
 }
 
-void Student :: setValidFirst() {
+void Student :: setValidFirst() {//sets the first name of the user
 
 	do {
 		cout << "Enter your first name" << endl;
@@ -40,7 +40,7 @@ void Student :: setValidFirst() {
 
 }
 
-void Student:: setValidLast() {
+void Student:: setValidLast() {//sets the last name of the user
 
 	do {
 		cout << "Enter your last name" << endl;
@@ -49,7 +49,7 @@ void Student:: setValidLast() {
 
 }
 
-void Student:: setValidCourseNum() {
+void Student:: setValidCourseNum() {//sets the number of courses the user has
 
 	do {
 		do {
@@ -60,7 +60,7 @@ void Student:: setValidCourseNum() {
 	} while (coursenum > 8 || coursenum < 1);
 }
 
-void Student:: setValidCourses() {
+void Student:: setValidCourses() {//sets the names of the courses the user has
 
 	for (int i = 0; i < coursenum; i++)
 	{
@@ -111,7 +111,7 @@ void Student:: setValidCourses() {
 
 }
 
-void Student:: setValidCourseGrades() {
+void Student:: setValidCourseGrades() { //sets the grades the user has 
 
 	for (int i = 0; i < coursenum; i++)
 	{
@@ -158,7 +158,7 @@ void Student:: setValidCourseGrades() {
 
 }
 
-void Student:: randomizeInfraction() {
+void Student:: randomizeInfraction() {//randomizes the infraction
 	if (rand() % 2 == 1) {
 		discplineissue = false;
 	}
@@ -174,7 +174,7 @@ void Student:: randomizeInfraction() {
 	}
 }
 
-void Student:: calcAverage() {
+void Student:: calcAverage() {//calculates the average of the grades
 	for (int i = 0; i < coursenum; i++) {
 		average += coursegrades[i];
 	}
@@ -182,7 +182,7 @@ void Student:: calcAverage() {
 	average = average / coursenum;
 }
 
-void Student:: getOutput() {
+void Student:: getOutput() {//sends output.
 	cout << "\n" << first << " " << last << "\nClass" << left << " " << "Grade" << left << "\n\n";
 
 	for (int i = 0; i < coursenum; i++) {

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Student
+class Student//declaring all methods and variables and constructors.
 {
 public:
 	Student();

@@ -5,22 +5,23 @@
 
 using namespace std;
 
-
+/*
 int main()
 {
 
 	Student theStudent;
 
-	theStudent.getValidFirst();
-	theStudent.getValidLast();
+	theStudent.setValidFirst();
+	theStudent.setValidLast();
 
-	theStudent.getValidCourseNum();
+	theStudent.setValidCourseNum();
 
-	theStudent.getValidCourses();
-	theStudent.getValidCourseGrades();
+	theStudent.setValidCourses();
+	theStudent.setValidCourseGrades();
 
 	theStudent.calcAverage();
 
 	theStudent.getOutput();
 
 }
+*/
