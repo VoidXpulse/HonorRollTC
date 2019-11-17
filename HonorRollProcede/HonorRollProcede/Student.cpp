@@ -15,7 +15,12 @@ Student :: Student() {
 	first = "";
 	last = "";
 
-	discplineissue = rand() % 2;
+	if (rand() % 2 == 1) {
+		discplineissue = false;
+	}
+	else {
+		discplineissue = true;
+	}
 
 	if (discplineissue) {
 		issue = "YES";
@@ -26,31 +31,36 @@ Student :: Student() {
 
 }
 
-void setValidFirst() {
-
-	cout << "Enter your first name" << endl;
-	getline(cin, first);
-
-}
-
-void setValidLast() {
-
-	cout << "Enter your last name" << endl;
-	getline(cin, last);
-
-}
-
-void setValidCourseNum() {
+void Student :: setValidFirst() {
 
 	do {
-	
-		cout << "Enter the number of courses you have." << endl;
-
-	} while (getValidInt(coursenum));
+		cout << "Enter your first name" << endl;
+		getline(cin, first);
+	} while (first.length() < 1);
 
 }
 
-void setValidCourses() {
+void Student:: setValidLast() {
+
+	do {
+		cout << "Enter your last name" << endl;
+		getline(cin, last);
+	} while (last.length() < 1);
+
+}
+
+void Student:: setValidCourseNum() {
+
+	do {
+		do {
+
+			cout << "Enter the number of courses you have." << endl;
+
+		} while (!getValidInt(coursenum));
+	} while (coursenum > 8 || coursenum < 1);
+}
+
+void Student:: setValidCourses() {
 
 	for (int i = 0; i < coursenum; i++)
 	{
@@ -101,7 +111,7 @@ void setValidCourses() {
 
 }
 
-void setValidCourseGrades() {
+void Student:: setValidCourseGrades() {
 
 	for (int i = 0; i < coursenum; i++)
 	{
@@ -142,14 +152,19 @@ void setValidCourseGrades() {
 					break;
 				}
 				}
-			} while (getValidInt(coursegrades[i]));
+			} while (!getValidInt(coursegrades[i]));
 		} while (coursegrades[i] > 100 || coursegrades[i] < 0);
 	}
 
 }
 
-void randomizeInfraction() {
-	discplineissue = rand() % 2;
+void Student:: randomizeInfraction() {
+	if (rand() % 2 == 1) {
+		discplineissue = false;
+	}
+	else {
+		discplineissue = true;
+	}
 
 	if (discplineissue) {
 		issue = "YES";
@@ -159,7 +174,7 @@ void randomizeInfraction() {
 	}
 }
 
-void calcAverage() {
+void Student:: calcAverage() {
 	for (int i = 0; i < coursenum; i++) {
 		average += coursegrades[i];
 	}
@@ -167,20 +182,20 @@ void calcAverage() {
 	average = average / coursenum;
 }
 
-void getOutput() {
-	cout << name << "\nClass" << left << "     " << "Grade" << left << "\n\n";
+void Student:: getOutput() {
+	cout << "\n" << first << " " << last << "\nClass" << left << " " << "Grade" << left << "\n\n";
 
 	for (int i = 0; i < coursenum; i++) {
-		cout << courses[i] << left << "     " << coursegrades[i] << left << "\n";
+		cout << courses[i] << left << " " << coursegrades[i] << left << "\n";
 	}
 
 	cout << "\nAverage: " << average << "\n";
 	cout << "Disciplinary Infraction: " << issue << "\n";
 
-	if (average > 90 && coursenum >= 5 && discplineissue) {
-		cout << "Congratulations " << name << "! You have made the honor roll.";
+	if (average >= 90 && coursenum >= 5 && !discplineissue) {
+		cout << "Congratulations " << first << " " << last << "! You have made the honor roll. \n";
 	}
 	else {
-		cout << "I’m sorry " << name << " but you didn’t qualify for the honor roll.";
+		cout << "I am sorry " << first << " " << last << " but you did not qualify for the honor roll. \n";
 	}
 }

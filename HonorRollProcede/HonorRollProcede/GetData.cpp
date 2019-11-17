@@ -1,7 +1,6 @@
 #include "GetData.h"
 #include <string>
-#include <iostream>
-#include <iomanip>
+#include <iostream>d#include <iomanip>
 
 using namespace std;
 

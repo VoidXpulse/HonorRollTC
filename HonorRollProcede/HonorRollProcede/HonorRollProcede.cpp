@@ -1,6 +1,3 @@
-// HonorRollProcede.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <string>
 
@@ -32,7 +29,7 @@ int main()
 			getline(cin, numofcourse);
 		} while (!(numofcourse.find_first_not_of("0123456789") == string::npos) || numofcourse.length() < 1);
 
-		coursenum = stoi(numofcourse);
+		coursenum = stoi(numofcourse) ;
 
 	} while (coursenum < 0 || coursenum > 8);
 
@@ -130,7 +127,12 @@ int main()
 		} while (coursegrades[i] > 100 || coursegrades[i] < 0);
 	}
 
-	discplineissue = rand() % 2;
+	if (rand() % 2 == 1) {
+		discplineissue = false;
+	}
+	else {
+		discplineissue = true;
+	}
 
 	if (discplineissue) {
 		issue = "YES";
@@ -154,22 +156,12 @@ int main()
 	cout << "\nAverage: " << average << "\n";
 	cout << "Disciplinary Infraction: " << issue << "\n";
 
-	if (average > 90 && coursenum >= 5 && discplineissue) {
-		cout << "Congratulations " << firstname << "! You have made the honor roll. \n";
+	if (average > 90 && coursenum >= 5 && !discplineissue) {
+		cout << "Congratulations " << firstname << " " << lastname << "! You have made the honor roll. \n";
 	}
 	else {
-		cout << "I am sorry " << firstname << " but you did not qualify for the honor roll. \n";
+		cout << "I am sorry " << firstname << " " << lastname << " but you did not qualify for the honor roll. \n";
 	}
 
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
